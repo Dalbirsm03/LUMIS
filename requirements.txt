@@ -1,0 +1,8 @@
+langchain_google_genai
+google-generativeai
+load_dotenv
+crewai
+crewai_tools
+opencv-python
+pyautogui
+SpeechRecognition
