@@ -6,3 +6,9 @@ crewai_tools
 opencv-python
 pyautogui
 SpeechRecognition
+streamlit
+
+langchain
+langchain-experimental
+langchain-community
+langchain-core
