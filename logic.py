@@ -22,9 +22,9 @@ def run_genai_logic_audio(audio_file):
     return response.text
 
 # Function to route the task based on code-related classification
-def route_based_on_classification(transcribed_text, video_file):
+def route_based_on_classification(transcribed_text, video_file, selected_lines):
     prompt = f"""
-    1. **Explanation of the Error**: Analyze the video '{video_file}' and the spoken issue '{transcribed_text}' to identify the specific problem. Clearly explain the cause of the error.
+    1. **Explanation of the Error**: Analyze the video '{video_file}' and the spoken issue '{transcribed_text}' to identify the specific problem in the code lines '{selected_lines}'. Clearly explain the cause of the error.
     2. **Approach to Solve the Error**: Outline the steps needed to resolve the error, focusing on the necessary code changes or adjustments.
     3. **Corrected Code**: Provide the corrected version of the code that addresses the identified issue.
     4. **Summary**: Conclude with a brief summary of the solution, emphasizing the key points and how the changes fix the problem.
@@ -37,7 +37,3 @@ def route_based_on_classification(transcribed_text, video_file):
     
     video_response = code_model.generate_content([my_video_file, prompt])
     return video_response.text
-
-
-audio_file = "output.wav"
-video_file = "output.mp4"
